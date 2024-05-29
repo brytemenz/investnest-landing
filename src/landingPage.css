@@ -1,0 +1,19 @@
+/* src/landingPage.css */
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+
+/* landingPage.css */
+/* landingPage.css */
+.left-image {
+  height: 100%;
+  background-image: url('./assets/leftimage.jpg'); /* Ensure the path is correct */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

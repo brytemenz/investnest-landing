@@ -1,0 +1,21 @@
+/* src/landingPage.css */
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+/* src/landingPage.css */
+.left-image-3d {
+  transform: perspective(1000px) rotateY(-10deg);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.left-image-3d:hover {
+  transform: perspective(1000px) rotateY(-15deg);
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.6);
+}
+

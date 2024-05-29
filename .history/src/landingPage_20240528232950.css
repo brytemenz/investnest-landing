@@ -1,0 +1,36 @@
+/* src/landingPage.css */
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+/* src/landingPage.css */
+/* src/landingPage.css */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.rotate-y-10 {
+  transform: rotateY(-10deg);
+}
+
+.hover\:rotate-y-15:hover {
+  transform: rotateY(-15deg);
+}
+
+.shadow-xl {
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hover\:shadow-2xl:hover {
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.transition-transform {
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+

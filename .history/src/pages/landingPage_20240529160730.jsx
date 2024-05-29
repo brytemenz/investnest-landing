@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import rightImage from '../assets/rightimage.jpg';
-import { Button, Input, message } from 'antd';
+import { Button, Input } from 'antd';
 import LoadingSpinner from '../components/loadingSpinner';
 import ThreeDImage from '../components/ThreeDImage';
-import Footer from '../components/footer'; // Import the Footer component
-import emailjs from 'emailjs-com';
+import Footer from '../components/fFooter'; // Import the Footer component
+import Lottie from 'react-lottie';
+import animationData from '../assets/animation.json'; // Ensure the correct path to your Lottie JSON file
 
 const LandingPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [show3DModel, setShow3DModel] = useState(false);
   const [viewMode, setViewMode] = useState(null);
-  const [email, setEmail] = useState('');
-  const [userMessage, setUserMessage] = useState('');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,31 +25,13 @@ const LandingPage = () => {
     setViewMode(mode);
   };
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-  // const handleMessageChange = (e) => {
-  //   setUserMessage(e.target.value);
-  // };
-  const handleEmailSubmit = () => {
-    if (!email ) {
-      message.error('Please enter both email address and message');
-      return;
+  const lottieOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
     }
-
-    const templateParams = {
-      user_email: email,
-      from_name: 'New Investor',
-      message: userMessage
-    };
-
-    emailjs.send('service_8mkirnz', 'template_6623vdd', templateParams, 'tySJqPuSBuoEdtfig')
-      .then((response) => {
-        message.success('Email successfully sent!');
-        setEmail(''); // Clear the email input
-      }, (error) => {
-        message.error('Failed to send email, please try again later');
-      });
   };
 
   return (
@@ -64,11 +45,12 @@ const LandingPage = () => {
               <ThreeDImage modelUrl="/room.glb" mode={viewMode} />
             ) : (
               <div className="h-full relative">
-                <div className="left-image">
+                <div className="left-animation">
                   <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center space-y-4">
+                    <Lottie options={lottieOptions} height={400} width={400} />
                     <Button
                       onClick={() => handleView3DModel('vr')}
-                      className="bg-yellow-500 text-black px-8 rounded-md font-bold mt-80 mr-4 self-center transition duration-300 ease-in-out hover:text-yellow-500"
+                      className="bg-yellow-500 text-black px-6 rounded-md font-bold mt-80 mr-4 self-center transition duration-300 ease-in-out hover:text-yellow-500"
                       style={{ border: 'none' }}
                     >
                       View Room in VR
@@ -93,43 +75,19 @@ const LandingPage = () => {
                     our platform offers unparalleled opportunities and insights to propel your success.
                   </p>
                   <div className="mt-20 flex justify-center">
-                    <Input 
-                      placeholder="Enter your email" 
-                      className="border-b-2 border-white bg-zinc-800 text-white placeholder-white::placeholder px-4 py-2 focus:outline-none focus:text-black border-yellow-500" 
-                      value={email}
-                      onChange={handleEmailChange}
-                     
-                      // placeholder="Enter your email" 
-                      // value={email} 
-                      // onChange={handleEmailChange} 
-                      // className="border-b-2 border-white bg-zinc-800 text-white placeholder-white::placeholder px-4 py-2 focus:outline-none focus:border-yellow-500" 
-                    />
-                    {/* <Input.TextArea 
-                      placeholder="Enter your message" 
-                      value={userMessage} 
-                      onChange={handleMessageChange} 
-                      className="border-b-2 border-white bg-zinc-800 text-white placeholder-white::placeholder px-4 py-2 focus:outline-none focus:border-yellow-500 mt-4"  */}
-                    
-                   
-                    
+                    <Input placeholder="Enter your email" className="border-b-2 border-white bg-zinc-800 text-white placeholder-white::placeholder px-4 py-2 focus:outline-none focus:border-yellow-500" />
                   </div>
-                  
                   <div className="mt-8 flex items-center justify-center">
-                    <Button 
-                      className="bg-yellow-500 text-black px-6 rounded-md font-bold self-center transition duration-300 ease-in-out hover:text-yellow-500" 
-                      style={{ border: 'none' }}
-                      onClick={handleEmailSubmit}
-                    >
-                      Join the Waitlist
-                    </Button>
+                    <Button className="bg-yellow-500 text-black px-6 rounded-md font-bold self-center transition duration-300 ease-in-out hover:text-yellow-500" style={{ border: 'none' }}>Join the Waitlist</Button>
                   </div>
                 </div>
-                <Footer />
               </div>
             </div>
           </div>
         </>
       )}
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

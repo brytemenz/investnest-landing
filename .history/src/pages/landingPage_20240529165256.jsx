@@ -11,7 +11,6 @@ const LandingPage = () => {
   const [show3DModel, setShow3DModel] = useState(false);
   const [viewMode, setViewMode] = useState(null);
   const [email, setEmail] = useState('');
-  const [userMessage, setUserMessage] = useState('');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -29,11 +28,9 @@ const LandingPage = () => {
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-  // const handleMessageChange = (e) => {
-  //   setUserMessage(e.target.value);
-  // };
+
   const handleEmailSubmit = () => {
-    if (!email ) {
+    if (!email || !userMessage) {
       message.error('Please enter both email address and message');
       return;
     }
@@ -68,7 +65,7 @@ const LandingPage = () => {
                   <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center space-y-4">
                     <Button
                       onClick={() => handleView3DModel('vr')}
-                      className="bg-yellow-500 text-black px-8 rounded-md font-bold mt-80 mr-4 self-center transition duration-300 ease-in-out hover:text-yellow-500"
+                      className="bg-yellow-500 text-black px-6 rounded-md font-bold mt-80 mr-4 self-center transition duration-300 ease-in-out hover:text-yellow-500"
                       style={{ border: 'none' }}
                     >
                       View Room in VR
@@ -95,25 +92,11 @@ const LandingPage = () => {
                   <div className="mt-20 flex justify-center">
                     <Input 
                       placeholder="Enter your email" 
-                      className="border-b-2 border-white bg-zinc-800 text-white placeholder-white::placeholder px-4 py-2 focus:outline-none focus:text-black border-yellow-500" 
+                      className="border-b-2 border-white bg-zinc-800 text-white placeholder-white::placeholder px-4 py-2 focus:outline-none focus:border-yellow-500" 
                       value={email}
                       onChange={handleEmailChange}
-                     
-                      // placeholder="Enter your email" 
-                      // value={email} 
-                      // onChange={handleEmailChange} 
-                      // className="border-b-2 border-white bg-zinc-800 text-white placeholder-white::placeholder px-4 py-2 focus:outline-none focus:border-yellow-500" 
                     />
-                    {/* <Input.TextArea 
-                      placeholder="Enter your message" 
-                      value={userMessage} 
-                      onChange={handleMessageChange} 
-                      className="border-b-2 border-white bg-zinc-800 text-white placeholder-white::placeholder px-4 py-2 focus:outline-none focus:border-yellow-500 mt-4"  */}
-                    
-                   
-                    
                   </div>
-                  
                   <div className="mt-8 flex items-center justify-center">
                     <Button 
                       className="bg-yellow-500 text-black px-6 rounded-md font-bold self-center transition duration-300 ease-in-out hover:text-yellow-500" 

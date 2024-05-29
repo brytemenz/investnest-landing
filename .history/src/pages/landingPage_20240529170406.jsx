@@ -68,7 +68,7 @@ const LandingPage = () => {
                   <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center space-y-4">
                     <Button
                       onClick={() => handleView3DModel('vr')}
-                      className="bg-yellow-500 text-black px-8 rounded-md font-bold mt-80 mr-4 self-center transition duration-300 ease-in-out hover:text-yellow-500"
+                      className="bg-yellow-500 text-black px-6 rounded-md font-bold mt-80 mr-4 self-center transition duration-300 ease-in-out hover:text-yellow-500"
                       style={{ border: 'none' }}
                     >
                       View Room in VR

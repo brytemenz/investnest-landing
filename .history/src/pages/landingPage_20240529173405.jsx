@@ -78,8 +78,8 @@ const LandingPage = () => {
           </div>
           <div className="w-full lg:w-2/5 relative flex flex-col justify-end">
             <div className="bg-cover bg-center h-full" style={{ backgroundImage: `url(${rightImage})` }}>
-              <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col justify-start items-start text-white p-8">
-                <div className="mt-32 text-left lg:text-center w-full">
+              <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col justify-start items-start text-white px-8">
+                <div className="mt-32 text-left lg:text-center">
                   <h2 className="text-3xl font-bold mb-4">Welcome <br /><span className='text-yellow-500'>to the forefront of real estate </span><br />investing innovation!</h2>
                   <p className="text-sm mt-12">
                     We are thrilled to introduce a groundbreaking software platform that is poised to redefine the dynamics of the real estate industry. 

@@ -29,10 +29,12 @@ const LandingPage = () => {
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
-
+  // const handleMessageChange = (e) => {
+  //   setUserMessage(e.target.value);
+  // };
   const handleEmailSubmit = () => {
-    if (!email) {
-      message.error('Please enter email address');
+    if (!email ) {
+      message.error('Please enter both email address and message');
       return;
     }
 
@@ -63,10 +65,14 @@ const LandingPage = () => {
             ) : (
               <div className="h-full relative">
                 <div className="left-image">
+                <h2 className="text-3xl font-bold mb-4">
+                    <span className="text-yellow-500">Invest</span><span>Nest</span>.
+                  </h2>
                   <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center space-y-4">
+                    
                     <Button
                       onClick={() => handleView3DModel('vr')}
-                      className="bg-yellow-500 text-black px-8 rounded-md font-bold mt-80 lg:mt-0 mr-4 lg:self-center transition duration-300 ease-in-out hover:text-yellow-500"
+                      className="bg-yellow-500 text-black px-8 rounded-md font-bold mt-80 mr-4 self-center transition duration-300 ease-in-out hover:text-yellow-500"
                       style={{ border: 'none' }}
                     >
                       View Room in VR
@@ -78,8 +84,9 @@ const LandingPage = () => {
           </div>
           <div className="w-full lg:w-2/5 relative flex flex-col justify-end">
             <div className="bg-cover bg-center h-full" style={{ backgroundImage: `url(${rightImage})` }}>
-              <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col justify-start items-start text-white p-8">
-                <div className="mt-32 text-left lg:text-center w-full">
+              <div className="absolute inset-0 bg-black bg-opacity-90 flex flex-col justify-start items-start text-white px-8">
+                <div className="mt-32 text-left lg:text-center">
+                
                   <h2 className="text-3xl font-bold mb-4">Welcome <br /><span className='text-yellow-500'>to the forefront of real estate </span><br />investing innovation!</h2>
                   <p className="text-sm mt-12">
                     We are thrilled to introduce a groundbreaking software platform that is poised to redefine the dynamics of the real estate industry. 
@@ -96,8 +103,22 @@ const LandingPage = () => {
                       className="border-b-2 border-white bg-zinc-800 text-white placeholder-white::placeholder px-4 py-2 focus:outline-none focus:text-black border-yellow-500" 
                       value={email}
                       onChange={handleEmailChange}
+                     
+                      // placeholder="Enter your email" 
+                      // value={email} 
+                      // onChange={handleEmailChange} 
+                      // className="border-b-2 border-white bg-zinc-800 text-white placeholder-white::placeholder px-4 py-2 focus:outline-none focus:border-yellow-500" 
                     />
+                    {/* <Input.TextArea 
+                      placeholder="Enter your message" 
+                      value={userMessage} 
+                      onChange={handleMessageChange} 
+                      className="border-b-2 border-white bg-zinc-800 text-white placeholder-white::placeholder px-4 py-2 focus:outline-none focus:border-yellow-500 mt-4"  */}
+                    
+                   
+                    
                   </div>
+                  
                   <div className="mt-8 flex items-center justify-center">
                     <Button 
                       className="bg-yellow-500 text-black px-6 rounded-md font-bold self-center transition duration-300 ease-in-out hover:text-yellow-500" 

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import rightImage from '../assets/rightimage.jpg';
-import leftImage from '../assets/leftimage.jpg';
+import leftImage from '../assets/leftimage.jpg'; // Ensure the correct path for your left image
 import { Button, Input, message } from 'antd';
-import LoadingSpinner from '../components/loadingSpinner';
+import LoadingSpinner from '../components/LoadingSpinner';
 import ThreeDImage from '../components/ThreeDImage';
-import Footer from '../components/footer';
+import Footer from '../components/Footer';
 import emailjs from 'emailjs-com';
 
 const LandingPage = () => {
@@ -64,7 +64,7 @@ const LandingPage = () => {
               <ThreeDImage modelUrl="/room.glb" mode={viewMode} />
             ) : (
               <div
-                className="h-full w-full bg-cover bg-center hidden lg:block"
+                className="h-full w-full bg-cover bg-center lg:block hidden"
                 style={{ backgroundImage: `url(${leftImage})` }}
               >
                 <div className="h-full flex flex-col justify-center items-center">
@@ -134,7 +134,7 @@ const LandingPage = () => {
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center space-y-4">
                   <Button
                     onClick={() => handleView3DModel('vr')}
-                    className="bg-yellow-500 text-black px-8 rounded-md font-bold transition duration-300 ease-in-out hover:text-yellow-500"
+                    className="bg-yellow-500 text-black px-8 rounded-md font-bold mt-20 lg:mt-0 transition duration-300 ease-in-out hover:text-yellow-500"
                     style={{ border: 'none' }}
                   >
                     View Room in VR

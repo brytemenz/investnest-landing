@@ -1,11 +1,11 @@
+/* src/landingPage.css */
 .bg-cover {
   background-size: cover;
 }
 
 .bg-center {
   background-position: center;
-}
-
+  
 .left-image {
   height: 100%;
   background-image: url('./assets/leftimage.jpg'); /* Ensure the path is correct */

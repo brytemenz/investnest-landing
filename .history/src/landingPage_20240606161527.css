@@ -1,0 +1,20 @@
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.left-image {
+  background-image: url('./assets//leftimage.jpg'); /* Ensure this path is correct */
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .left-image {
+    min-height: 200px; /* Adjust as necessary */
+  }
+  .right-image {
+    min-height: 200px; /* Adjust as necessary */
+  }
+}

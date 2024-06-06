@@ -1,3 +1,4 @@
+/* src/landingPage.css */
 .bg-cover {
   background-size: cover;
 }
@@ -6,6 +7,9 @@
   background-position: center;
 }
 
+
+/* landingPage.css */
+/* landingPage.css */
 .left-image {
   height: 100%;
   background-image: url('./assets/leftimage.jpg'); /* Ensure the path is correct */
@@ -65,7 +69,13 @@
   }
 }
 
-
+.left-image {
+  background-image: url('../assets/leftimage.jpg'); /* Replace with your actual left image path */
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
 
 .bg-cover {
   background-size: cover;
